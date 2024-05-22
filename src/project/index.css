@@ -1,0 +1,170 @@
+@font-face {
+    font-family: var(--font-family);
+    src: url('../project/assets/fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root{
+    /* Primary */
+    --tomato: hsl(4, 100%, 67%);
+
+    /* ### Neutral */
+    --dark-slate-grey: hsl(234, 29%, 20%);
+    --charcoal-grey: hsl(235, 18%, 26%);
+    --grey: hsl(231, 7%, 60%);
+    --white: hsl(0, 0%, 100%);
+
+    --font-family : "Roboto", sans-serif;
+    --font-size : 16px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+}
+.page{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--charcoal-grey);
+}
+.page__container{
+    background-color: var(--white);
+    display: flex;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+.page__container-img-mobile img{
+    display: none;
+    width: 100%;
+}
+
+.page__container-text{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    justify-content: center;
+    padding-right: 80px;
+    padding-left: 30px;
+    max-width: 380px;
+}
+
+.page__container-text p:first-child{
+    margin-top: 50px;
+    font-size: 53px;
+    font-weight: 700;
+}
+
+.page__container-text p:nth-child(2){
+    margin: 0;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    line-height: 25px;
+}
+
+
+.page__container-text form{
+    display: flex;
+    flex-direction: column;
+    margin: 50px 0;
+}
+
+.page__container-text-error{
+    display: flex;
+    justify-content: space-between;
+}
+
+.error-label{
+    display: none;
+}
+
+.page__container-text form label{
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.page__container-text form input{
+    height: 50px;
+    padding: 0 20px;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    border: 1px solid var(--grey);
+    margin: 10px 0;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.page__container-text form button{
+    margin: 15px 0;
+    padding: 20px;
+    background-color: var(--dark-slate-grey);
+    color: var(--white);
+    border-radius: 8px;
+    outline: none;
+    border: none;
+}
+
+.page__container-text form button:hover{
+    background: linear-gradient(61deg, rgba(175, 40, 100, 1) 0%, rgba(255, 98, 87, 1) 65%);
+}
+
+/* errooooooorrrrrr */
+
+.error{
+    display: block;
+    color: var(--tomato)
+}
+
+.input-error{
+    border: 1px solid var(--tomato) !important; 
+    background-color: rgb(248, 228, 228);
+    color: var(--tomato);
+}
+/* ----------------- */ 
+
+@media screen and (max-width : 900px) {
+    .page__container{
+        flex-direction: column;
+    }
+
+    .page__container-text{
+        padding: 0;
+    }
+
+    .page__container-image img{
+        display: none;
+    }
+
+    .page__container-img-mobile img{
+        display: flex;
+    }
+}
+
+@media screen and (max-width : 420px) {
+    .page{
+        align-items: start;
+    }
+    .page__container{
+        padding: 0;
+        border-radius: 0;
+        justify-content: flex-start;
+        height: 100vh;
+        width: 100vh;
+    }
+    .page__container-text{
+        max-width: 100vh;
+        padding: 0 30px;
+    }
+
+    .page__container-text p:first-child{
+        font-size: 40px;
+    }
+
+}
